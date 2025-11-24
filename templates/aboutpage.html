@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 20px 20px;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: justify;
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        ul {
+            max-width: 400px;
+            margin: 20px auto;
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 10px;
+            list-style: none;
+        }
+
+        ul li {
+            padding: 8px 0;
+            font-size: 1.1em;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "✔";
+            color: #00ffcc;
+            position: absolute;
+            left: -25px;
+        }
+
+        footer.footer {
+            text-align: center;
+            padding: 20px;
+            
+            color: #fff;
+        
+            bottom: 0;
+            width: 100%;
+
+            text-align: center;
+        
+            background: rgba(0,0,0,0.7);
+        
+            font-size: 0.9em;
+            margin-top: auto;
+        }
+        /* Responsive adjustments */
+        @media screen and (max-width: 600px) {
+            header {
+                font-size: 2em;
+            }
+
+            p, ul {
+                margin: 15px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+            <h1>About Employee Management System</h1>
+    </header>
+    <p>
+        The Employee Management System (EMS) is designed to simplify and streamline the management of employee information for organizations. It helps HR departments to efficiently track employee details, attendance, payroll, performance, and more.This system improves efficiency, reduces manual errors, and provides easy access to employee information whenever needed.
+    </p>
+    <ul>
+        <li>Features include:</li>
+        <li>About</li>
+        <li>Add Employee</li>
+        <li>View Employee</li>
+        <li>Delete_Employee</li>
+        <li>Update_Employee</li>
+        <li>Testimonials</li>
+        <li>Services</li>
+        <li>Feedback</li>
+        <li>Follow</li>
+    </ul>         
+    <footer class="footer">
+        <p>
+            © 2025 Employee Management System — All Rights Reserved
+            Designed by <b>Richa Yadhuvanshi</b>
+        </p>
+    </footer> 
+</body>
+</html>

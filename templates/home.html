@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home_page</title>
+    <style>
+        /* Body with background image and gradient overlay */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0,0,50,0.6), rgba(0,0,50,0.6)),
+                        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 30px 20px;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        main.container {
+            flex: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        main p {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: justify;
+            color: #e0f7fa;
+        }
+
+        form {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .input {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            width: 60%;
+            max-width: 300px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .send {
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #00bcd4;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .send:hover {
+            background-color: #0097a7;
+        }
+
+        h2, h3, h4 {
+            color: #ffeb3b;
+        }
+
+        hr {
+            border: 1px solid #00bcd4;
+            margin: 20px 0;
+        }
+
+        footer.footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,50,0.7);
+            color: #ffcc00;
+            font-size: 0.9em;
+            margin-top: 20px;
+            border-top: 1px solid #00bcd4;
+        }
+
+        /* Navbar placeholder styling (if included) */
+        nav {
+            margin-bottom: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 600px) {
+            header {
+                font-size: 2em;
+            }
+
+            main p {
+                font-size: 1em;
+                padding: 15px;
+            }
+
+            .input {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Employee Management System</h1>
+    </header>
+    <main class="container">
+        <p>
+            Manage your organization’s employees efficiently with this system.
+            You can add new employees, view the employee list, and track essential information easily.
+        </br>You can share your thinking about this project.
+        </p>
+        <!--sended data can see from request using code-->
+        <form action="/index/" method="POST">
+            {% csrf_token %}
+            <input class="input" type="text" name ="check">
+            <button class="send">send</button>
+        </form>
+        {% if isActive %}
+        <!--Accessing dynamic value-->
+        <h2>Today date is {{date}}</h2>
+        <h3>My name is {{name}}</h3>
+        <h2>Student Data</h2>
+        <h4>Student_name: {{student.student_name}}</h4>
+        <h4>Student_college: {{student.student_college}}</h4>
+        <h4>Student_city: {{student.student_city}}</h4>
+        <!--<hr>
+        <h2>Favorite Programs</h2>-->
+        {% for p in list_of_programs %}
+                
+        <h3>{{p}}</h3>
+
+        {% endfor %}
+
+        {% endif %}
+         {% include "navbar.html" %}
+        
+    </main>
+    <footer class="footer">
+        <p>
+            &copy; 2025 Employee Management System | Designed by <b>Richa Yadhuvanshi</b>
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Employee Management</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                        url("https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600") 
+                        no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        /* Header Section */
+        header .H {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 0 0 10px #000, 0 0 20px #000;
+            letter-spacing: 2px;
+            border-bottom: 3px solid #00eaff;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* Main container */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* Service Boxes */
+        .service-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: 0.3s ease;
+            border-left: 5px solid #00eaff;
+        }
+
+        .service-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(0, 238, 255, 0.7);
+        }
+
+        .service-box h3 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            color: #00eaff;
+            text-shadow: 0 0 5px #000;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        ul {
+            margin-left: 15px;
+            font-size: 1.05rem;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer.footer {
+            background: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 40px;
+            color: #ccc;
+        }
+
+        footer b {
+            color: #ffdf00;  /* Your Name in Golden Color */
+            text-shadow: 0 0 8px #ffdf00;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="H">
+            <h1>Our Services</h1>
+        </div>
+    </header>
+    <div class="container">
+        
+
+        <div class="service-box">
+            <h3>Employee Management(Main Module)</h3>
+            <p>
+                This is the central module of the system.It handles everything related to employees.
+                <ul>
+                    <li>Stores all employee records</li>
+                    <li>Shows the list of employees</li>
+                    <li>Helps admins manage employees easily</li>
+                    <li>Connects Add, Update, Delete, View features</li>
+                    <li>Ensures data is safe and organized</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="service-box">
+            <h3>Add Employee</h3>
+            <p>This feature is used to insert a new employee into the system.
+                <ul>
+                    <li>Takes input from a form (name, phone, id, address, dept)</li>
+                    <li>Stores the data in the database</li>
+                    <li>Checks if all required fields are filled</li>
+                    <li>Helps HR/admin add new staff easily</li>
+                </ul>
+
+            </p>
+
+        </div>
+
+        <div class="service-box">
+            <h3>Delete Employee</h3>
+            <p>
+                This module deletes an employee record.
+            </p>
+        </div>
+
+        <div class="service-box">
+            <h3>Update Employee</h3>
+            <p>
+                This feature is used to modify employee details.
+            </p>
+        </div>
+        <div class="service-box">
+            <h3>View Employee</h3>
+            <p>
+                Shows all information about an employee.
+                <ul>
+                    <li>Displays employee profile</li>
+                    <li>Shows full details clearly</li>
+                    <li>Helps admin check information anytime</li>
+                </ul>
+            </p>
+        </div>
+        <div class="service-box">
+            <h3>Feedback</h3>
+            <p>
+                This feature collects feedback from employees/users.
+            </p>
+        </div>
+    </div>
+    <footer class="footer">
+    <p>
+        © 2025 Employee Management System — All Rights Reserved
+    </p>
+    <p>
+        Designed by <b>Richa Yadhuvanshi</b>
+    </p>
+</footer>
+</body>
+</html>

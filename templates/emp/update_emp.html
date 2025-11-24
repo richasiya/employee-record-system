@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Update Employee</title>
+    <style>
+  
+        body {
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+                        url('https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+            background-size: cover;
+            font-family: "Times New Roman", Georgia, serif;
+            color: #333;
+        }
+
+        /* Card styling for classic feel */
+        .card {
+            border: 2px solid #555;
+            border-radius: 12px;
+            box-shadow: 4px 4px 20px rgba(0,0,0,0.25);
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Label styling (keeping typo 'lable' as in HTML) */
+        lable {
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 10px;
+            display: block;
+            color: #222;
+        }
+
+        /* Form inputs, textarea, and select styling */
+        input.form-control, textarea.form-control, select {
+            border: 1px solid #777;
+            border-radius: 6px;
+            padding: 8px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        input.form-control:focus, textarea.form-control:focus, select:focus {
+            border-color: #0066cc;
+            box-shadow: 0 0 8px rgba(0, 102, 204, 0.5);
+            outline: none;
+        }
+
+        /* Checkbox styling */
+        .from-check-input {
+            width: 18px;
+            height: 18px;
+            accent-color: #0066cc;
+            margin-left: 5px;
+        }
+
+        /* Button classic look */
+        button.btn {
+            background-color: #0066cc;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 10px 25px;
+            border: 1px solid #004080;
+            transition: 0.3s;
+        }
+
+        button.btn:hover {
+            background-color: #004080;
+        }
+
+        /* Highlight your name inside page */
+        .highlight-name {
+            color: #d63384;
+            font-weight: bold;
+            font-size: 1.3em;
+            background-color: rgba(255, 255, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Footer styling */
+        footer.footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-family: "Georgia", serif;
+            font-size: 0.9em;
+        
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer.footer b {
+            color: #ffc107;
+        }
+
+        footer.footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+
+        footer.footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+  </head>
+  <body>
+    {% include 'emp/navbar.html' %}
+    <h1 class="text-center my-3">Update Employee</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+
+                <div class="card">
+                    <div class="card-body">
+
+
+
+                        <form action="/emp/do-update-emp/{{emp.id}}" method="POST" class="bg bg-light">
+                            {% csrf_token %}
+                            
+                            <div class="md-3">
+                                <lable for="name">Employee name</lable>
+                                <input id="name" 
+                                type="text" 
+                                class="form-control" 
+                                placeholder="Enter Employee name" name="emp_name"
+                                value="{{emp.name}}">
+                            </div>
+                            <div class="md-3">
+                                <lable for="phone">Phone No.</lable>
+                                <input id="phone" 
+                                type="text" 
+                                class="form-control" 
+                                placeholder="enter your phone no." name="emp_phone"
+                                value ="{{emp.phone}}">
+                            </div>
+                            <div class="md-3">
+                                <lable for="id">Employee ID</lable>
+                                <input id="id" 
+                                type="text" 
+                                class="form-control" 
+                                placeholder="Enter your id" name="emp_id"
+                                value="{{emp.emp_id}}">
+                            </div>
+
+                            <div class="md-3">
+                                <lable for="address">Employee Address</lable>
+                                
+                                <textarea name="emp_address" 
+                                id="address" 
+                                cols="30" rows="5" 
+                                class="form-control"
+                                value ="{{emp.address}}"></textarea>
+                            </div>
+                            <div class="md-3 from-check">
+                                <lable for="working">Working</lable>
+                                <input id="working" 
+                                name="emp_working" 
+                                {% if emp.working %} checked {% endif %} 
+                                type="checkbox" 
+                                class="from-check-input">
+                            </div>
+                            <div class="md-3">
+                                <lable for="department">Department</lable>
+                                <select value ="{{emp.department}}" name="emp_department" id="department">
+                                    <option value="CSE">Computer Science and Engg</option>
+                                    <option value="ME">Mechanical Engg</option>
+                                    <option value="EE">Electrical Engg</option>
+                                    <option value="CE">Civil Engg</option>
+                                </select>
+                            </div>
+                            <div class="container text-center">
+                                <button class="btn">
+                                    Update Employee
+                                </button>
+                            </div>
+
+
+
+
+
+                        </form>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <footer class="footer">
+        <p>© 2025 Employee Management System — All Rights Reserved</p>
+        <p>Designed by <b>Richa Yadhuvanshi</b></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>

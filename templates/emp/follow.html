@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Follow Us - Employee Management</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600")
+
+
+                        no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        /* HEADER DESIGN */
+        header .header {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+
+        header h2 {
+            font-size: 3rem;
+            color: #00eaff;
+            text-shadow: 0 0 10px #000, 0 0 20px #00eaff;
+            letter-spacing: 2px;
+            margin-bottom: -5px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .icons {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px 50px;
+            border-radius: 20px;
+            text-align: center;
+            width: 350px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            transition: 0.3s ease;
+        }
+
+        .icons:hover {
+            box-shadow: 0 0 30px #00eaff;
+        }
+
+        .icons p {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+
+        /* SOCIAL LINKS */
+        .icons a {
+            display: block;
+            font-size: 1.3rem;
+            margin: 15px 0;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            transition: 0.3s ease;
+            border-left: 4px solid #00eaff;
+        }
+
+        .icons a:hover {
+            transform: translateX(10px);
+            background: #00eaff;
+            color: #000;
+            font-weight: bold;
+            text-shadow: none;
+            box-shadow: 0 0 15px #00eaff;
+        }
+
+        /* FOOTER */
+        footer.footer {
+            background: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 50px;
+            color: #dcdcdc;
+        }
+
+        footer b {
+            color: #ffdf00; /* Your name in gold */
+            text-shadow: 0 0 10px #ffdf00;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            header h2 {
+                font-size: 2.3rem;
+            }
+            .icons {
+                width: 85%;
+                padding: 25px;
+            }
+            .icons a {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h2>Follow Us</h2>
+        </div>
+    </header>
+    <main>
+        
+        <div class="container">
+        <div class="icons">
+            <p>Stay connected with us on social media!</p>
+            <a href="https://youtube.com/@rsy325?si=xEoZQDw-sVddpZXr"><b>Youtube</b></a>
+            <a href="#"><b>Instagram</b></a>
+            <a href="https://www.linkedin.com/in/richa-kumari-848a35283?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Brxg1kl61TmKlC0Tmiy8ULg%3D%3D"><b>LinkedIn</b></a>
+            <a href="https://github.com/richasiya"><b>GitHub</b></a>
+        </div>
+    </div>
+    </main>
+    <footer class="footer">
+    <p>
+        © 2025 Employee Management System — All Rights Reserved
+    </p>
+
+    <p>
+        Designed by <b>Richa Yadhuvanshi</b>
+    </p>
+</footer>
+    
+</body>
+</html>
